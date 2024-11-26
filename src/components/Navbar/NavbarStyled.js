@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Navbar Styled
 export const NavbarStyled = styled.div`
   background-color: #131415;
   color: white;
@@ -13,11 +12,32 @@ export const NavbarStyled = styled.div`
   font-family: "Oswald";
   position: relative;
   z-index: 10;
+  user-select: none;
 
   .nav-links {
     display: flex;
     gap: 30px;
     align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-color: #131415;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      padding: 20px 0;
+      border-radius: 0 0 20px 20px;
+      z-index: 10;
+      height: 150px;
+    }
+
+    &.open {
+      display: flex;
+    }
   }
 
   .dropdown {
@@ -27,6 +47,57 @@ export const NavbarStyled = styled.div`
   .dropdown2 {
     position: relative;
     margin-right: 30px;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+`;
+
+export const MenuToggle = styled.div`
+  display: none;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  margin-right: 45px;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  div:nth-child(1) {
+    top: 0;
+  }
+
+  div:nth-child(2) {
+    top: 50%;
+    transform: translateY(-40%);
+  }
+
+  div:nth-child(3) {
+    bottom: 0;
+  }
+
+  &.open {
+    div:nth-child(1) {
+      transform: rotate(45deg) translate(11px, 11px);
+    }
+
+    div:nth-child(2) {
+      opacity: 0;
+    }
+
+    div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 
@@ -46,8 +117,9 @@ export const LinkStyled = styled.a`
   font-size: 25px;
   cursor: pointer;
   &:hover {
-    background-color: #690c0c;
-    border-radius: 5px;
+    color: #ab1515;
+    /* background-color: #690c0c;
+    border-radius: 5px; */
   }
 `;
 
@@ -70,7 +142,7 @@ export const DropdownMenu = styled.ul`
 export const DropdownItem = styled.li`
   padding: 10px 20px;
   &:hover {
-    background-color: #690c0c;
+    background-color: #141516;
   }
 `;
 

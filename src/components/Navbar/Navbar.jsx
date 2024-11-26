@@ -4,6 +4,7 @@ import {
   DropdownMenu,
   Img,
   LinkStyled,
+  MenuToggle,
   NavbarStyled,
   Overlay,
 } from "./NavbarStyled";
@@ -11,8 +12,9 @@ import {
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
-  const productos = ["Vinos", "Cervezas", "Fernet", "Vermut"];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const productos = ["Aperitivos", "Cervezas", "Destilados", "Vinos"];
   const showOverlay = isDropdownOpen || isDropdownOpen2;
 
   return (
@@ -20,7 +22,15 @@ const Navbar = () => {
       {showOverlay && <Overlay />}
       <NavbarStyled>
         <Img src="img/logoVermuteando2.png" alt="Logo Vermuteando" />
-        <div className="nav-links">
+        <MenuToggle
+          className={isMenuOpen ? "open" : ""}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </MenuToggle>
+        <div className={`nav-links ${isMenuOpen ? "open" : ""}`}>
           <LinkStyled href="#">Inicio</LinkStyled>
           <div
             className="dropdown"
