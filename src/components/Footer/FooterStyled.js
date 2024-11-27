@@ -37,7 +37,7 @@ export const FooterStyled = styled.div`
     color: #fff;
 
     &:hover {
-      color: rgb(254, 218, 117);
+      color: #25d366;
     }
 
     @media (max-width: 768px) {
