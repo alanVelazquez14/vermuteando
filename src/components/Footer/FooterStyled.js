@@ -27,6 +27,9 @@ export const FooterStyled = styled.div`
     &:hover {
       color: #bc2a8d;
     }
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   .iconWhatsapp {
@@ -35,6 +38,10 @@ export const FooterStyled = styled.div`
 
     &:hover {
       color: rgb(254, 218, 117);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 20px;
     }
   }
 `;
@@ -50,10 +57,19 @@ export const ContainerInfo = styled.div`
   p {
     margin: 9px;
     font-size: 17px;
+
+    @media (max-width: 768px) {
+      font-size: 11px;
+    }
   }
 `;
 
 export const ImgFooter = styled.img`
   width: 160px;
   height: 120px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 80px;
+  }
 `;

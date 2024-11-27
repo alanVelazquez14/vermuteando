@@ -64,7 +64,7 @@ export const MenuToggle = styled.div`
 
   div {
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 3px;
     background-color: white;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -107,6 +107,11 @@ export const Img = styled.img`
   margin-top: 25px;
   width: 170px;
   height: 130px;
+
+  @media (max-width: 768px) {
+    width: 130px;
+    height: 90px;
+}
 `;
 
 // Link Styled
