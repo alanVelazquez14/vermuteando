@@ -13,11 +13,23 @@ export const NavbarStyled = styled.div`
   position: relative;
   z-index: 10;
   user-select: none;
+  
+  .search-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 1;
+  }
 
   .nav-links {
     display: flex;
     gap: 30px;
     align-items: center;
+    z-index: 2;
 
     @media (max-width: 768px) {
       display: none;
@@ -111,7 +123,7 @@ export const Img = styled.img`
   @media (max-width: 768px) {
     width: 130px;
     height: 90px;
-}
+  }
 `;
 
 // Link Styled

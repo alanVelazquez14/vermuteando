@@ -1,11 +1,12 @@
 import React from "react";
 import { HomeStyled } from "./HomeStyled";
+import Productos from "../../components/Productos/Productos";
 
 export const Home = () => {
   return (
     <>
       <HomeStyled>
-        <h1>Vermuteando</h1>
+        <Productos />
       </HomeStyled>
     </>
   );

@@ -8,13 +8,9 @@ export const FooterStyled = styled.div`
   color: #fff;
   text-align: center;
   border-radius: 12px 12px 0 0;
-  position: fixed;
-  bottom: 0;
-  height: auto;
-  width: 100%;
   font-family: "Oswald";
   user-select: none;
-
+  
   .social-icons {
     display: flex;
     gap: 30px;

@@ -8,6 +8,8 @@ import {
   NavbarStyled,
   Overlay,
 } from "./NavbarStyled";
+import Search from "../FormSearch/Search";
+import { useSearch } from "../../../SearchProvider";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,11 +19,20 @@ const Navbar = () => {
   const productos = ["Aperitivos", "Cervezas", "Destilados", "Vinos"];
   const showOverlay = isDropdownOpen || isDropdownOpen2;
 
+  const { setSearch } = useSearch();
+
+  const handleSearch = (searchTerm) => {
+    setSearch(searchTerm);
+  };
+
   return (
     <>
       {showOverlay && <Overlay />}
       <NavbarStyled>
         <Img src="img/logoVermuteando2.png" alt="Logo Vermuteando" />
+        <div className="search-form">
+          <Search onSearch={handleSearch} />
+        </div>{" "}
         <MenuToggle
           className={isMenuOpen ? "open" : ""}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -31,7 +42,7 @@ const Navbar = () => {
           <div></div>
         </MenuToggle>
         <div className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <LinkStyled href="#">Inicio</LinkStyled>
+          <LinkStyled href="/">Inicio</LinkStyled>{" "}
           <div
             className="dropdown"
             onMouseEnter={() => setIsDropdownOpen(true)}
